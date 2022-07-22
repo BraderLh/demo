@@ -6,8 +6,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
+
 public class DemoApplication {
 
 	public static void main(String[] args) {
@@ -18,6 +20,8 @@ public class DemoApplication {
 	CommandLineRunner runner(ProductRepository repository){
 		return args -> {
 			Product product = new Product("Pipe", 30.00, 2);
+			System.out.println(product.toString());
+			repository.insert(product);
 		};
 	}
 }

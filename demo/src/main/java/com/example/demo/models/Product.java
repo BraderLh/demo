@@ -1,10 +1,14 @@
 package com.example.demo.models;
 
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
+@Document
+
 public class Product {
     @Id
     private String id;
@@ -13,13 +17,11 @@ public class Product {
     private int quantity;
 
     public Product(String name, double unitPrice, int quantity) {
-
-
         this.name = name;
         this.unitPrice = unitPrice;
         this.quantity = quantity;
     }
-
+    /*
     public String getID() {
         return id;
     }
@@ -50,7 +52,5 @@ public class Product {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-
+    }*/
 }

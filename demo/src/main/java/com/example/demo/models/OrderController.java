@@ -2,7 +2,7 @@ package com.example.demo.models;
 
 import java.util.ArrayList;
 
-public class Controller {
+public class OrderController {
     private ArrayList<Order> order;
 
     public void setOrder(ArrayList<Order> order) {
