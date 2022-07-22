@@ -23,6 +23,6 @@ public class OrderService {
     }
 
     public Order updateOrder(Order order) {
-        return orderRepository.save(order);
+        return orderRepository.insert(order);
     }
 }

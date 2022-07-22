@@ -4,11 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.demo.models.Order;
 import com.example.demo.services.OrderService;
@@ -28,13 +24,13 @@ public class OrderController {
     }
 
     @PostMapping
-    public ResponseEntity<Order> addOrder(Order order){
+    public ResponseEntity<Order> addOrder(@RequestBody Order order){
         Order created = orderService.addOrder(order);
         return ResponseEntity.ok(created);
     }
 
     @PutMapping
-    public ResponseEntity<Order> updateOrder(Order order){
+    public ResponseEntity<Order> updateOrder(@RequestBody Order order){
         Order updated = orderService.updateOrder(order);
         return ResponseEntity.ok(updated);
     }
