@@ -24,20 +24,31 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	// @Bean
-	// CommandLineRunner runner(ProductRepository repository, OrderRepository orderRepository) {
-	// 	return args -> {
-	// 		ArrayList<ProductOrder> myProducts = new ArrayList<ProductOrder>();
-	// 		List<Product> existingProducts = repository.findAll();
-	// 		int finalPrice = 0;
-	// 		for (Product product : existingProducts) {
-	// 			int quantity = (int) (Math.random() * 10);
-	// 			System.out.println("Product: " + product.getId());
-	// 			myProducts.add(new ProductOrder(product, quantity));
-	// 			finalPrice += product.getUnitPrice() * quantity;
-	// 		}
-	// 		Order order = new Order(1, new Date(), myProducts, finalPrice);
-	// 		orderRepository.insert(order);
-	// 	};
-	// }
+/*	@Bean
+	CommandLineRunner runner(ProductRepository repository) {
+		return args -> {
+			Product product = new Product(
+					"Lighter",
+					2.50
+			);
+			repository.insert(product);
+		};
+	}*/
+
+//		@bean
+//		commandlinerunner runner (productrepository repository, orderrepository orderrepository){
+//			return args -> {
+//				arraylist<productorder> myproducts = new arraylist<productorder>();
+//				list<product> existingproducts = repository.findall();
+//				int finalprice = 0;
+//				for (product product : existingproducts) {
+//					int quantity = (int) (math.random() * 10);
+//					system.out.println("product: " + product.getid());
+//					myproducts.add(new productorder(product, quantity));
+//					finalprice += product.getunitprice() * quantity;
+//				}
+//				order order = new order(1, new date(), myproducts, finalprice);
+//				orderrepository.insert(order);
+//			};
+//		}
 }
